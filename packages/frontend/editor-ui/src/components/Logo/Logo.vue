@@ -72,6 +72,7 @@ onMounted(() => {
 
 .logoText {
 	margin-left: var(--spacing-5xs);
+
 	path {
 		fill: var(--color-text-dark);
 	}
@@ -81,12 +82,12 @@ onMounted(() => {
 	transform: scale(2);
 	margin-bottom: var(--spacing-xl);
 
-	.logo,
-	.logoText {
-		transform: scale(1.3) translateY(-2px);
+	.logo {
+		transform: scale(1) translateY(-2px);
 	}
 
 	.logoText {
+		transform: scale(1) translateY(-4px);
 		margin-left: var(--spacing-xs);
 		margin-right: var(--spacing-3xs);
 	}

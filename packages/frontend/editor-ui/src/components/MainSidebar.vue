@@ -157,6 +157,7 @@ const mainMenuItems = computed<IMenuItem[]>(() => [
 		label: i18n.baseText('mainSidebar.variables'),
 		position: 'bottom',
 		route: { to: { name: VIEWS.VARIABLES } },
+		available: false,
 	},
 	{
 		id: 'insights',
@@ -164,9 +165,7 @@ const mainMenuItems = computed<IMenuItem[]>(() => [
 		label: 'Insights',
 		position: 'bottom',
 		route: { to: { name: VIEWS.INSIGHTS } },
-		available:
-			settingsStore.isModuleActive('insights') &&
-			hasPermission(['rbac'], { rbac: { scope: 'insights:list' } }),
+		available: false,
 	},
 	{
 		id: 'help',
@@ -226,6 +225,7 @@ const mainMenuItems = computed<IMenuItem[]>(() => [
 				position: 'bottom',
 			},
 		],
+		available: false,
 	},
 	{
 		id: 'whats-new',
@@ -233,7 +233,7 @@ const mainMenuItems = computed<IMenuItem[]>(() => [
 		notification: showWhatsNewNotification.value,
 		label: i18n.baseText('mainSidebar.whatsNew'),
 		position: 'bottom',
-		available: versionsStore.hasVersionUpdates || versionsStore.whatsNewArticles.length > 0,
+		available: false,
 		children: [
 			...versionsStore.whatsNewArticles.map(
 				(article) =>
